@@ -1,0 +1,101 @@
+.main-container {
+  padding: 2rem;
+
+  @include media-sm {
+    padding: 4rem;
+  }
+}
+
+.main-heading {
+  margin-top: 1em;
+}
+
+.cards-container {
+  display: flex;
+  @include pans-flex(100%);
+  flex-direction: column;
+  gap: 1rem;
+
+  @include media-sm {
+    flex-direction: row;
+  }
+}
+
+@mixin cardStyler($bg,$color) {
+  .card-footer {
+    background: $bg;
+    color: $color;
+    border-radius: 4px;
+    padding: .2rem .5rem;
+
+    &:hover {
+      transition: all .1s ease-in-out;
+      color: lighten($color, 10%);
+      background: darken($bg, 10%);
+    }
+  }
+}
+
+.card {
+  margin-top: 2em;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+
+  &-title, &-text, &-footer {
+    @include my-flex;
+    justify-content: flex-start;
+  }
+
+  &-title {
+    padding: .1rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-sm {
+      justify-content: flex-start;
+    }
+  
+  }
+
+  &-text {
+    margin-top: 1rem;
+    text-align: center;
+
+    @include media-sm {
+      text-align: initial;
+    }
+  }
+
+  &-footer {
+    margin-top: 2rem;
+    @include my-flex;
+    justify-content: space-between;
+  }
+
+  &-icon {
+    margin-right: 2px;
+  }
+}
+
+.cards-container .card:nth-of-type(1) {
+  @include cardStyler($gray-900, $td-apple-green);
+}
+
+.cards-container .card:nth-of-type(2) {
+  @include cardStyler($gray-900, $purple-300);
+}
+
+.cards-container .card:nth-of-type(3) {
+  @include cardStyler($gray-900, $yellow-400);
+}
+
+.cards-container .card:nth-of-type(4) {
+  @include cardStyler($gray-900, $green-400);
+}

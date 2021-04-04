@@ -1,0 +1,821 @@
+/* 
+Welcome To Tie & Dye CSS, The First shinny nitty gritty CSS Library! 
+  == Version 2.0.0 - 14 Feb 2021 Setup ==
+  >> Here comes the best CSS tricks, make sure to check our bit sized docs!
+  At https://tie-and-dye.github.io or follow on twitter @tie_and_dye
+*/
+/* imported styles...
+* td-base;
+* td-queries;
+* td-variables;
+* td-mixins;
+* td-animations;
+* td-colors;
+* td-custom ... create this partial and import it at end!
+*/
+/* 
+*These Are The Base Presets Of Tie & Dye! ( inherited from tailwind css reset )
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+html {
+  line-height: 1.15;
+  scrollbar-color: light;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+hr {
+  height: 0;
+  color: inherit;
+}
+
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+legend {
+  padding: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+summary {
+  display: list-item;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 1 */
+  line-height: 1.5;
+}
+
+body {
+  font-family: inherit;
+  line-height: inherit;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+hr {
+  border-top-width: 1px;
+}
+
+img {
+  border-style: solid;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #9ca3af;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #9ca3af;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+button,
+[role=button] {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object,
+picture {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+picture,
+video {
+  aspect-ratio: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 
+*These Are The Media Queries Of Tie & Dye!
+*/
+/* 
+*These Are Variables Of Tie & Dye!
+*/
+/* text-shadow */
+/* box-shadow-light */
+/* box-shadow-lighter */
+/* 
+* These Are The Mixins Of Tie & Dye! ( we really need more of them! )
+*/
+/* 
+*These Are Animations Of Tie & Dye! ( currently in beta )
+*/
+@-webkit-keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* 
+* These Are The Colors Of Tie & Dye! 
+( shade variants generated with tailwind shades vscode extension by Omar Bourhaouta )
+*/
+/* 
+* Default theme inspirations 
+*/
+/* 
+* Tie & Dye Gradients 
+*/
+/* 
+* Tie & Dye Random Colors 
+*/
+/* 
+* Tie & Dye Shades
+*/
+/* 
+* Here you can write your custom over-rides! 
+( they will replace the prior styles )
+*/
+/* 
+* Beta Hacks ( these are proposed for the next version and are changeable )
+*/
+* {
+  transition: all 2s ease-in linear;
+  scroll-behavior: smooth;
+}
+
+* + * {
+  margin-top: 1em;
+}
+
+* > * {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  max-width: 100%;
+}
+
+a {
+  transition: all 0.3s ease-in-out;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+  height: 6px;
+  background-color: #eff1f5;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  height: 6px;
+  background-color: #9ca3af;
+  border: 2px solid #eff1f5;
+}
+
+::-moz-selection {
+  background-color: #f3f4f6;
+  text-shadow: 1px 1px 10px rgba(42, 53, 64, 0.4);
+  border-radius: 4px;
+}
+
+::selection {
+  background-color: #f3f4f6;
+  text-shadow: 1px 1px 10px rgba(42, 53, 64, 0.4);
+  border-radius: 4px;
+}
+
+:-webkit-tap-highlight-color {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none !important;
+  font-size: calc(90% + 0.1vw);
+}
+
+body {
+  overflow-y: scroll;
+}
+
+/* 
+* App layout styles 
+*/
+#App {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  color: #111827;
+}
+
+h1, h2, h3 {
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+  font-family: "Made-Dillan";
+  font-weight: bold;
+}
+@media screen and (min-width: 580px) {
+  h1, h2, h3 {
+    font-size: 2em;
+  }
+}
+
+header {
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid;
+  -o-border-image: #f3f4f6 3;
+     border-image: #f3f4f6 3;
+  margin: 0 auto;
+  background: rgba(249, 250, 251, 0.2);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main section:first-child {
+  width: 100%;
+  background: #f9fafb;
+}
+
+.wave-wrapper {
+  width: 100%;
+  position: absolute;
+  transform: translateY(-4rem);
+}
+
+.svg-wave {
+  width: 100%;
+  fill: #eaedf1;
+}
+
+main section:nth-of-type(2) {
+  width: 100%;
+  background: #eaedf1;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(80%);
+  position: initial;
+  padding: 0.5rem;
+  background: #dae1e7;
+}
+
+/* body and global styles */
+.dim-text {
+  color: #6b7280;
+  font-weight: 500;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.highlight-text {
+  color: #bf3357;
+}
+
+.spacer {
+  width: 100%;
+  height: 12%;
+}
+
+nav {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 580px) {
+  nav {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-icon {
+  width: clamp(24px,32px,72px);
+  height: clamp(24px,32px,72px);
+  color: #88ff00;
+  margin-right: 0.5rem;
+}
+
+.nav-left span:last-child {
+  font-size: calc(100% + 1vw);
+  font-family: "DroidSans";
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.nav-right button {
+  padding: 0.5rem 1rem;
+  background: #88ff00;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.nav-right button:hover {
+  transition: all 0.3s ease-in-out;
+  background: #7ae600;
+  color: #30446e;
+}
+
+.hero-container {
+  margin-top: 10%;
+  padding-bottom: 30%;
+}
+@media screen and (min-width: 580px) {
+  .hero-container {
+    padding-bottom: 10%;
+  }
+}
+
+.hero-container, .hero-action {
+  width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero-container h1, .hero-action h1 {
+  width: 85%;
+  font-size: 1.2em;
+  text-align: center;
+  font-family: "Made-Dillan";
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 580px) {
+  .hero-container h1, .hero-action h1 {
+    font-size: 2em;
+  }
+}
+
+.hero-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-form label {
+  font-weight: bold;
+  font-size: calc(100% + 0.5vw);
+}
+.hero-form .hero-mail-input {
+  width: 65%;
+  margin-right: 1rem;
+  border: 1px solid #9ca3af;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+.hero-form .hero-mail-input:hover, .hero-form .hero-mail-input:focus {
+  border: 1px solid #88ff00;
+}
+.hero-form .hero-button {
+  padding: 0.25rem 0.5rem;
+  background: #111827;
+  color: #f9fafb;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 1rem;
+}
+.hero-form .hero-button:hover {
+  transition: all 0.3s ease-in-out;
+  background: #192339;
+  color: #bcc7d2;
+}
+
+.main-container {
+  padding: 2rem;
+}
+@media screen and (min-width: 580px) {
+  .main-container {
+    padding: 4rem;
+  }
+}
+
+.main-heading {
+  margin-top: 1em;
+}
+
+.cards-container {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (min-width: 580px) {
+  .cards-container {
+    flex-direction: row;
+  }
+}
+
+.card {
+  margin-top: 2em;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+.card-title, .card-text, .card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card-title {
+  padding: 0.1rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 580px) {
+  .card-title {
+    justify-content: flex-start;
+  }
+}
+.card-text {
+  margin-top: 1rem;
+  text-align: center;
+}
+@media screen and (min-width: 580px) {
+  .card-text {
+    text-align: initial;
+  }
+}
+.card-footer {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-icon {
+  margin-right: 2px;
+}
+
+.cards-container .card:nth-of-type(1) .card-footer {
+  background: #111827;
+  color: #88ff00;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+.cards-container .card:nth-of-type(1) .card-footer:hover {
+  transition: all 0.1s ease-in-out;
+  color: #a0ff33;
+  background: #020203;
+}
+
+.cards-container .card:nth-of-type(2) .card-footer {
+  background: #111827;
+  color: #af7dd1;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+.cards-container .card:nth-of-type(2) .card-footer:hover {
+  transition: all 0.1s ease-in-out;
+  color: #c6a3de;
+  background: #020203;
+}
+
+.cards-container .card:nth-of-type(3) .card-footer {
+  background: #111827;
+  color: #ffb133;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+.cards-container .card:nth-of-type(3) .card-footer:hover {
+  transition: all 0.1s ease-in-out;
+  color: #ffc566;
+  background: #020203;
+}
+
+.cards-container .card:nth-of-type(4) .card-footer {
+  background: #111827;
+  color: #6dad6a;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+.cards-container .card:nth-of-type(4) .card-footer:hover {
+  transition: all 0.1s ease-in-out;
+  color: #8dbf8b;
+  background: #020203;
+}
